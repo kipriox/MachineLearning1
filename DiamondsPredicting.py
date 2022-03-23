@@ -42,3 +42,15 @@ result['price'] = y_test
 result['prediction'] = predictions.tolist()
 
 print(result.to_string())
+
+# Определение оси x
+x_axis = x_test.carat
+
+# Построение графиков
+plt.scatter(x_axis, y_test, c = 'b', alpha = 0.5, marker = '.', label = 'Real')
+plt.scatter(x_axis, predictions, c = 'r', alpha = 0.5, marker = '.', label ='Predicted')
+plt.xlabel('carat')
+plt.ylabel('price')
+plt.grid(color = '#030303', linestyle = 'solid')
+plt.legend(loc = 'lower right')
+plt.show()
